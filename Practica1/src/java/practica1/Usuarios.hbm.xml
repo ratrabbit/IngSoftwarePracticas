@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/02/2016 11:11:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="practica1.Usuarios" table="usuarios" schema="public" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="apellidos" />
+        </property>
+        <property name="fechainicio" type="date">
+            <column name="fechainicio" length="13" />
+        </property>
+        <one-to-one name="cuentas" class="practica1.Cuentas"></one-to-one>
+    </class>
+</hibernate-mapping>
